@@ -79,7 +79,7 @@ jobs:
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     needs: validate
     runs-on: ubuntu-latest
-    environment: production
+    environment: productiondb
     concurrency:
       group: production-release
       cancel-in-progress: false
@@ -109,7 +109,7 @@ jobs:
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     needs: migrate-prod
     runs-on: ubuntu-latest
-    environment: production
+    environment: productiondb
     concurrency:
       group: production-release
       cancel-in-progress: false
