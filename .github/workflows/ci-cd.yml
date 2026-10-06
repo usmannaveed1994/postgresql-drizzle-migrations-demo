@@ -67,7 +67,9 @@ jobs:
           fi
 
       - name: Type check
-        run: npx tsc --noEmit
+        run: |
+          npx next typegen
+          npx tsc --noEmit
 
   # ─────────────────────────────────────────────
   # 2. main only: migrate production
