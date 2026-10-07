@@ -5,13 +5,12 @@ import {
   UsersPageShell,
   usersPageContentClass,
 } from "@/components/users-page-shell";
-import { fetchFromApi } from "@/lib/server-api";
-import type { UserWithPosts } from "@/lib/types";
+import { listUsersWithPosts } from "@/lib/queries/users";
 
 export const dynamic = "force-dynamic";
 
 export default async function Home() {
-  const users = await fetchFromApi<UserWithPosts[]>("/api/users");
+  const users = await listUsersWithPosts();
   const env = process.env.VERCEL_ENV ?? "local";
 
   const authors = users.map((user) => ({ id: user.id, name: user.name }));
