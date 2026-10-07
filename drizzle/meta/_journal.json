@@ -8,6 +8,13 @@
       "when": 1790875643175,
       "tag": "0000_stale_true_believers",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1791380134100,
+      "tag": "0001_past_magik",
+      "breakpoints": true
     }
   ]
 }

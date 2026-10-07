@@ -7,6 +7,7 @@ export type Post = {
 export type UserWithPosts = {
   id: string;
   name: string;
+  username: string | null;
   posts: Post[];
 };
 

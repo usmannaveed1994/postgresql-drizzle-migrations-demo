@@ -4,6 +4,7 @@ import { relations } from "drizzle-orm";
 export const users = pgTable("users", {
   id: uuid("id").primaryKey().defaultRandom(),
   name: text("name").notNull(),
+  username: text("username").unique(),
 });
 
 export const posts = pgTable("posts", {
