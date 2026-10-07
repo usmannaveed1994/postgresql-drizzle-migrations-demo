@@ -17,6 +17,7 @@ import {
   UsersPageShell,
   usersPageContentClass,
 } from "@/components/users-page-shell";
+import { HoverDeleteLabel } from "@/components/hover-delete-label";
 
 export const dynamic = "force-dynamic";
 
@@ -139,7 +140,12 @@ export default async function Home() {
                           className="size-4 shrink-0 text-muted-foreground"
                           aria-hidden
                         />
-                        {u.name}
+                        <HoverDeleteLabel
+                          deleteUrl={`/api/users/${u.id}`}
+                          label="Delete user"
+                        >
+                          {u.name}
+                        </HoverDeleteLabel>
                       </CardTitle>
                       <Badge className="h-5 shrink-0 border-0 bg-amber-400/70 px-2 text-[0.65rem] font-semibold">
                         {u.posts.length === 0
@@ -159,7 +165,12 @@ export default async function Home() {
                                 className="mt-0.5 size-3.5 shrink-0 text-primary"
                                 aria-hidden
                               />
-                              <span>{p.title}</span>
+                              <HoverDeleteLabel
+                                deleteUrl={`/api/posts/${p.id}`}
+                                label="Delete post"
+                              >
+                                {p.title}
+                              </HoverDeleteLabel>
                             </li>
                           ))}
                         </ul>
